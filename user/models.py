@@ -4,6 +4,7 @@ from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
 from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
 
 
 class CustomAccountManager(BaseUserManager):
@@ -60,6 +61,7 @@ class CustomAccountManager(BaseUserManager):
 
 
 class Patsient(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     email = models.EmailField(_('email address'), unique=True)
     name = models.CharField(max_length=150)
     mobile = models.CharField(max_length=150, blank=True)
@@ -192,3 +194,14 @@ class Admin(models.Model):
         name = "Admin"
         return name
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE, blank=True, null=True)
+    name = models.CharField(max_length=200, null=True, blank=True)
+    username = models.CharField(max_length=200, unique=True)
+    img = models.ImageField(upload_to='profile_pict', null=True, blank=True)
+    info = models.CharField(max_length=2000, blank=True, null=True)
+    location = models.CharField(max_length=200, blank=True, null=True)
+    email = models.EmailField(max_length=255, blank=True, null=True)
+
+    def __str__(self):
+        return self.username

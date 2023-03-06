@@ -13,3 +13,12 @@ class PatsientForm(forms.ModelForm):
                   'city',
                   'street']
         widgets = {'password': forms.PasswordInput()}
+
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = 'username', 'first_name', 'password'
+        widgets = {
+            'password': forms.PasswordInput(),
+        }

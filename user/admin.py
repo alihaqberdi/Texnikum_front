@@ -1,10 +1,19 @@
 from django.contrib import admin
-from .models import Nurse,Patsient, Doctor,SeniorDoctor,Admin
+from .models import Nurse,Patsient, Doctor,SeniorDoctor,Admin, Profile
 # Register your models here.
+
+
+
+
+admin.site.register(Profile)
+
+
+
 
 @admin.register(Patsient)
 class Patsient(admin.ModelAdmin):
-    list_display = ['name',
+    list_display = ['user',
+                    'name',
                     'email',
                     'mobile',
                     'images',
