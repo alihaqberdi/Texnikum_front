@@ -47,17 +47,17 @@
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
 							<nav class="main_nav ml-auto">
 								<ul>
-									<li><a href="{% url 'home:index' %}">Home</a></li>
-									<li><a href="{% url 'home:about' %}">About us</a></li>
-									<li><a href="{% url 'home:service' %}">Services</a></li>
-									<li><a href="{% url 'home:news' %}">News</a></li>
-									<li><a href="{% url 'home:contact' %}">Contact</a></li>
+									<li><a href="{% url 'home:index' %}">Bosh sahifa</a></li>
+									<li><a href="{% url 'home:about' %}">Biz Haqimizda</a></li>
+									<li><a href="{% url 'home:service' %}">Xizmatlar</a></li>
+									<li><a href="{% url 'home:news' %}">Yangiliklar</a></li>
+									<li><a href="{% url 'home:contact' %}">Aloqa uchun</a></li>
 									{% if user.is_authenticated %}
-                                    <li><a href="{% url 'user:profile' %}">Profile</a></li>
-                                    <li><a href="{% url 'user:logout' %}">Log out</a></li>
+                                    <li><a href="{% url 'user:profile' %}">Shaxsiy Kabinet</a></li>
+                                    <li><a href="{% url 'user:logout' %}">Tizimdan chiqish</a></li>
                                   	{% else %}
-                                    <li><a href="{% url 'user:register' %}">sign up</a></li>
-                                    <li><a href="{% url 'user:login' %}">login</a></li>
+                                    <li><a href="{% url 'user:register' %}">Ro'yxatdan o'tish</a></li>
+                                    <li ><a href="{% url 'user:login' %}">Kirish</a></li>
                                   	{% endif %}
 								</ul>
 							</nav>
@@ -114,13 +114,13 @@
 			</div>
 			<div class="menu_extra">
 				<div class="menu_appointment"><a href="#">Request an Appointment</a></div>
-				<div class="menu_emergencies">For Emergencies: +563 47558 623</div>
+				<div class="menu_emergencies">aloqa uchun: +998 88 613 40 44</div>
 			</div>
 
 		</div>
 
 	</div>
-	
+
 	<!-- Home -->
 
 	<div class="home">
@@ -130,11 +130,11 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">About <span>CareMed</span></div>
+							<div class="home_title">CareMed<span>Haqida</span></div>
 							<div class="breadcrumbs">
 								<ul>
-									<li><a href="#">Home</a></li>
-									<li>About Caremed</li>
+									<li><a href="#">Bosh sahifa</a></li>
+									<li>Caremed haqida</li>
 								</ul>
 							</div>
 						</div>
@@ -152,30 +152,38 @@
 
 				<!-- About Content -->
 				<div class="col-lg-8">
-					<div class="section_title"><h2>A great medical team to help your needs</h2></div>
+					<div class="section_title"><h2>Ehtiyojlaringizga yordam beradigan ajoyib tibbiy guruh</h2></div>
 					<div class="about_text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellen tesque in luctus ex. Praesent luctus erat sit amet tortor aliquam bibendum. Nulla ut molestie augue, scelerisque consectetur quam. Dolor sit amet, consectetur adipiscing elit. Cura bitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellentesque in luctus ex.</p>
-						<p>Praesent luctus erat sit amet tortor aliquam bibendum. Nulla ut molestie augue, scelerisque consectetur quam. Dolor sit amet, consectetur adipiscing elit. Cura bitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellentesque in luctus ex.</p>
+						<p>Sizning ehtiyojlaringizga yordam beradigan ajoyib tibbiy guruhlar dunyoda ko'p mavjud. Bu guruhlar sizga sizning ehtiyojlaringizga mos keladigan tibbiy yordam berish uchun xizmat qilishadi. Bu guruhlarning ba'zi xususiyatlari quyidagilardir:
+
+Yordam berish joyi: Bir nechta tibbiy guruhlar onlayn platformalarda, telefonda yoki shaxsiy tadbirlarda ehtiyojlarga yordam berishadi. Bu guruhlar sizning muayyan tibbiy masalalaringizni hal qilishda yordam berishadi.</p>
+						<p>Yordam beruvchilar: Bu tibbiy guruhlar tabiblar, shifokorlar, pediatrlar, psixologlar, tibbiy texnologlar va boshqa tibbiy mutaxassislar tomonidan tashkil qilinadi.
+
+Xizmatlar: Bu guruhlar sizning ehtiyojlaringizga mos keladigan xizmatlar ko'rsatishadi, masalan, psixologik yordam, dietologik tavsiyalar, tibbiy tahlil va davolarni taqdim etish kabi.Yo'nalish: Bir nechta tibbiy guruhlar odamlarning turli turdagi ehtiyojlari uchun yo'nalishlarga ega. Masalan, ayollarga xususiy yordam berishadi, yosh bola va chaqaloqlar uchun xizmat ko'rsatishadi va boshqa turli turdagi yo'nalishlarga mos keladi.
+
+Nogironlik holatlari: Bazi tibbiy guruhlar nogironlik holatlari uchun tashkil qilingan, masalan, aholi o'rtasida turli turdagi epidemiyalar, shirin suv ko'pincha kasalligi va boshqalar kabi. Bu guruhlar ogohlantirishlar va o'qitishlar taqdim etishadi, shuningdek, insonlarning bu holatlardan himoya qilish uchun kerakli tavsiyalarni beradi.
+
+</p>
 					</div>
 					<div class="row loaders_container">
 						<div class="col-md-3 loader_col">
 							<!-- Loader -->
-							<div class="loader" data-perc="0.75"><span>Hard Work</span></div>
+							<div class="loader" data-perc="0.97"><span>Qattiq mehnat</span></div>
 						</div>
 						<div class="col-md-3 loader_col">
 							<!-- Loader -->
-							<div class="loader" data-perc="0.95"><span>Passion</span></div>
+							<div class="loader" data-perc="0.95"><span>Ishtiyoq</span></div>
 						</div>
 						<div class="col-md-3 loader_col">
 							<!-- Loader -->
-							<div class="loader" data-perc="0.75"><span>Hard Work</span></div>
+							<div class="loader" data-perc="0.94"><span>Kuchli mehnat</span></div>
 						</div>
 						<div class="col-md-3 loader_col">
 							<!-- Loader -->
-							<div class="loader" data-perc="0.95"><span>Passion</span></div>
+							<div class="loader" data-perc="0.99"><span>harakat</span></div>
 						</div>
 					</div>
-					<div class="button about_button"><a href="#">read more</a></div>
+					<div class="button about_button"><a href="#">Ko'proq o'qish</a></div>
 				</div>
 
 				<!-- Boxes -->
@@ -184,19 +192,19 @@
 					<!-- Box -->
 					<div class="box working_hours">
 						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width:29px; height:29px;"><img src="{% static 'images/alarm-clock.svg' %}" alt=""></div></div>
-						<div class="box_title">Working Hours</div>
+						<div class="box_title">Ish Vaqti</div>
 						<div class="working_hours_list">
 							<ul>
 								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Monday – Friday</div>
+									<div>Dushanba – Jumma</div>
 									<div class="ml-auto">8.00 – 19.00</div>
 								</li>
 								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Saturday</div>
+									<div>Shanba</div>
 									<div class="ml-auto">9.30 – 17.00</div>
 								</li>
 								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Sunday</div>
+									<div>Yakshanba</div>
 									<div class="ml-auto">9.30 – 15.00</div>
 								</li>
 							</ul>
@@ -207,15 +215,15 @@
 					<div class="box box_appointments">
 						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width: 29px; height:29px;"><img src="{% static 'images/phone-call.svg' %}" alt=""></div></div>
 						<div class="box_title">Appointments</div>
-						<div class="box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam cons equat semper sollicitudin.</div>
+						<div class="box_text">Tibbiyot sohasida uchrashuvlar bemorni parvarish qilishning hal qiluvchi qismidir. Tibbiy uchrashuvlar bemor va shifokor, hamshira yoki boshqa tibbiyot xodimlari kabi sog'liqni saqlash mutaxassisi o'rtasidagi</div>
 					</div>
 
 					<!-- Box -->
 					<div class="box box_emergency">
 						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width: 37px; height:37px; margin-left:-4px;"><img src="{% static 'images/bell.svg' %}" alt=""></div></div>
-						<div class="box_title">Emergency Cases</div>
-						<div class="box_phone">+56 273 45678 235</div>
-						<div class="box_emergency_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo.</div>
+						<div class="box_title">Favqulodda vaziyatlar</div>
+						<div class="box_phone">+998 88 613 40 44</div>
+						<div class="box_emergency_text">Tibbiyot sohasidagi favqulodda vaziyatlar shoshilinch tibbiy yordam va davolanishni talab qiladigan favqulodda yoki hayot uchun</div>
 					</div>
 
 				</div>
@@ -230,19 +238,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="section_title section_title_light"><h2>Patient Testimonials</h2></div>
+					<div class="section_title section_title_light"><h2>Bemor guvohliklari</h2></div>
 				</div>
 			</div>
 			<div class="row test_row">
-				
+
 				<!-- Testimonial -->
 				<div class="col-lg-6 test_col">
 					<div class="testimonial">
 						<div class="test_icon d-flex flex-column align-items-center justify-content-center"><img src="{% static 'images/quote.png' %}" alt=""></div>
-						<div class="test_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dap ibus massa. Pellen tesque in luctus ex. Praesent luctus erat sit amet torto.</div>
+						<div class="test_text">Bemor guvohliklari - bu tibbiy yordam yoki davolanishni olgan bemorlarning fikr-mulohazalari. Ushbu guvohliklar qimmatlidir, chunki ular bemorning tajribasi haqida tushuncha beradi va tibbiy yordam yoki davolanishni so'ragan boshqalarga ongli qarorlar qabul qilishda yordam berishi mumkin.</div>
 						<div class="test_author d-flex flex-row align-items-center justify-content-start">
 							<div class="test_author_image"><div><img src="{% static 'images/test_1.jpg' %}" alt=""></div></div>
-							<div class="test_author_name"><a href="#">Claire Smith</a>, <span>Patient</span></div>
+							<div class="test_author_name"><a href="#">Miss Misis</a>, <span>Bemor</span></div>
 						</div>
 					</div>
 				</div>
@@ -251,10 +259,10 @@
 				<div class="col-lg-6 test_col">
 					<div class="testimonial">
 						<div class="test_icon d-flex flex-column align-items-center justify-content-center"><img src="{% static 'images/quote.png' %}" alt=""></div>
-						<div class="test_text">Slor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dap ibus massa. Pellen tesque in luctus ex. Praesent luctus erat sit amet tortor aliquam bibendum.</div>
+						<div class="test_text">Bemorning guvohliklari bemorning shifokor yoki tibbiyot xodimlari bilan bo'lgan tajribasi, davolash samaradorligi, muassasalarning sifati va olingan yordamdan umumiy qoniqish kabi turli xil ma'lumotlarni o'z ichiga olishi mumkin. Ushbu guvohliklarni tibbiy ko'rib chiqish veb-saytlari, ijtimoiy media va tibbiy provayderlarning veb-saytlari kabi turli platformalarda topish mumkin.</div>
 						<div class="test_author d-flex flex-row align-items-center justify-content-start">
 							<div class="test_author_image"><div><img src="{% static 'images/test_2.jpg' %}" alt=""></div></div>
-							<div class="test_author_name"><a href="#">Mick Williams</a>, <span>Patient</span></div>
+							<div class="test_author_name"><a href="#">Alijon Haqberdiyev</a>, <span>Bemor</span></div>
 						</div>
 					</div>
 				</div>
@@ -269,18 +277,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="section_title"><h2>Meet Our Medical Team</h2></div>
+					<div class="section_title"><h2>Tibbiy jamoamiz bilan tanishing</h2></div>
 				</div>
 			</div>
 			<div class="row team_row">
-				
+
 				<!-- Team Member -->
 				<div class="col-lg-3 team_col">
 					<div class="team_member">
 						<div class="team_member_image d-flex flex-column align-items-center justify-content-end"><img src="{% static 'images/team_1.png' %}" alt=""></div>
 						<div class="team_member_info">
 							<div class="team_member_name"><a href="#">Dr. Melissa Smith</a></div>
-							<div class="team_member_title">Cardiologist</div>
+							<div class="team_member_title">Kardiolog</div>
 						</div>
 					</div>
 				</div>
@@ -290,8 +298,8 @@
 					<div class="team_member">
 						<div class="team_member_image d-flex flex-column align-items-center justify-content-end"><img src="{% static 'images/team_2.png' %}" alt=""></div>
 						<div class="team_member_info">
-							<div class="team_member_name"><a href="#">Dr. Josh Henderson</a></div>
-							<div class="team_member_title">Plastic Surgeon</div>
+							<div class="team_member_name"><a href="#">Dr. Ali Haqberdi</a></div>
+							<div class="team_member_title">Plastik Jarroh</div>
 						</div>
 					</div>
 				</div>
@@ -302,7 +310,7 @@
 						<div class="team_member_image d-flex flex-column align-items-center justify-content-end"><img src="{% static 'images/team_3.png' %}" alt=""></div>
 						<div class="team_member_info">
 							<div class="team_member_name"><a href="#">Dr. Christinne Jones</a></div>
-							<div class="team_member_title">Pediatrist</div>
+							<div class="team_member_title">Pediatr</div>
 						</div>
 					</div>
 				</div>
@@ -312,8 +320,8 @@
 					<div class="team_member">
 						<div class="team_member_image d-flex flex-column align-items-center justify-content-end"><img src="{% static 'images/team_4.png' %}" alt=""></div>
 						<div class="team_member_info">
-							<div class="team_member_name"><a href="#">Dr. William Stan</a></div>
-							<div class="team_member_title">General Practicioner</div>
+							<div class="team_member_name"><a href="#">Dr. Barot To'rayev</a></div>
+							<div class="team_member_title">Umumiy amaliyot</div>
 						</div>
 					</div>
 				</div>
@@ -330,9 +338,9 @@
 			<div class="row">
 				<div class="col">
 					<div class="cta_content text-center">
-						<h2>Need a personal health plan?</h2>
-						<p>Duis massa massa, mollis vel ullamcorper quis, finibus et urna. Aliquam ac eleifend metus. Ut sollicitudin risus ex</p>
-						<div class="button cta_button"><a href="#">request a plan</a></div>
+						<h2>Shaxsiy salomatlik rejasi kerakmi?</h2>
+						<p>Shaxsiy salomatlik rejasi, kishilarga salomatlikni saqlash uchun o'zini boshqarishda yordam beradigan tadbirlarni o'z ichiga olgan bir qator amallar</p>
+						<div class="button cta_button"><a href="#">rejasini so'rash</a></div>
 					</div>
 				</div>
 			</div>

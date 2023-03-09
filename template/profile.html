@@ -1,13 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+<!-- {% load static %} -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
 
     <!-- Custom Css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- FontAwesome 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -17,6 +18,7 @@
 
 * {
     margin: 0;
+    padding: 0;
 }
 
 body {
@@ -27,12 +29,12 @@ body {
 
 /* NavbarTop */
 .navbar-top {
+    width: 100vw;
     background-color: #fff;
     color: #333;
     box-shadow: 0px 4px 8px 0px grey;
     height: 70px;
 }
-
 .title {
     font-family: 'Dancing Script', cursive;
     padding-top: 15px;
@@ -41,11 +43,14 @@ body {
 }
 
 .navbar-top ul {
+    display: flex;
     float: right;
     list-style-type: none;
     margin: 0;
     overflow: hidden;
-    padding: 18px 50px 0 40px;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .navbar-top ul li {
@@ -72,8 +77,13 @@ body {
 /* End */
 
 /* Sidenav */
+.sidenav-main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
 .sidenav {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #333;
     border-bottom-right-radius: 25px;
     height: 86%;
@@ -81,8 +91,10 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
     position: absolute;
-    top: 70px;
-    width: 250px;
+    top: 60px;
+    width: 18%;
+    padding: 30px;
+    margin-top: 20px;
 }
 
 .profile {
@@ -133,7 +145,9 @@ body {
     margin-left: 14%;
     width: 65%;
 }
-
+main{
+    display: none;
+}
 /* End */
 
 /* Main */
@@ -207,12 +221,11 @@ body {
     color: #25d366 !important;
 }
 
+Ozodbek React, [09.03.2023 15:17]
 .fa-snapchat:hover {
     color: #fffb01 !important;
 }
-
 /* End */
-
 .navbar-top .logo {
         padding: 10px 15px;
         font-size: 17px;
@@ -235,6 +248,155 @@ body {
         color: #999;
         font-style: 12px;
       }
+
+@media (max-width:963px){
+        .navbar-top{
+            width: 110%;
+            margin-bottom: 20px;
+        }
+        .navbar-top ul{
+            display: none;
+        }
+        .sidenav-main-container{
+            display: block;
+            padding: 10px 0px;
+        }
+        .sidenav-container{
+            position: relative;
+            top: -70px;
+            left: 10px;
+        }
+        .sidenav{
+            width: 97%;
+            height: 350px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 8px 0 grey;
+            padding-left: 10px;
+            padding-right: 10px;
+            /* background-color: red; */
+        }
+        .main{
+            position: absolute;
+            top: 550px;
+            /* left: 20px; */
+            margin: 0;
+            width: 100%;
+        }
+        /* Hamburger menu */
+        main {
+            display: block;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+
+        .logo,
+        .content {
+            color: #fafafa;
+        }
+
+        .nav {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+
+        .logo,
+        #hamburger {
+            margin: 2%;
+        }
+
+        #hamburger {
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.25s linear;
+            width: clamp(1.5rem, 2vw + 1.1rem, 6rem);
+            height: clamp(2rem, 1.4vw + 1.7rem, 5rem);
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: -10px;
+            top: 10px;
+        }
+
+        #hamburger:hover {
+            opacity: 1;
+        }
+
+        #hamburger div,
+        #hamburger div:after,
+        #hamburger div:before {
+            background-color: #000;
+            border-radius: 10px;
+            width: clamp(1.5rem, 2vw + 1.1rem, 6rem);
+            height: clamp(0.2rem, 0.3vw + 0.1rem, 0.8rem);
+            transition: all 0.15s linear;
+            height: 4px;
+        }
+
+        #hamburger div:before,
+        #hamburger div:after {
+            content: "";
+            position: absolute;
+            height: 4px;
+        }
+
+        #hamburger div:before {
+            transform: translateY(-200%);
+        }
+
+        #hamburger div:after {
+            transform: translateY(200%);
+        }
+
+        #hamburger.open div {
+            background: transparent;
+        }
+
+        #hamburger.open div:before {
+            transform: rotate(45deg);
+        }
+
+        #hamburger.open div:after {
+            transform: rotate(-45deg);
+        }
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            min-height: 100%;
+            background-color: #fff;
+            z-index: 1;
+            transform: translateY(-100%);
+            transition: all 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #overlay.menu {
+            transform: translateY(0%);
+        }
+
+
+#overlay a {
+            text-decoration: none;
+            color: #000;
+            font-size: 26px;
+            margin: 2%;
+            transition: opacity 0.2s linear;
+        }
+        #overlay a:hover {
+            opacity: 1;
+        }
+}
     </style>
 </head>
 <body>
@@ -249,75 +411,96 @@ body {
 
         <!-- Navbar -->
         <ul>
-           <li>
-                <a href="{% url 'home:index' %}"><b>Bosh sahifa</b>
-                </a>
-            </li>
-            <li>
-                <a href="#message"><b>Xizmatlar</b>
-                </a>
-            </li>
-          <li>
-                <a href="#message"><b>Video Maslahatlar</b>
-                </a>
-            </li>
-            <li>
-                <a href="#message"><b>Vebinar</b>
-                </a>
-            </li>
-            <li>
-                <a href="#message"><b>Xotira</b>
-                </a>
-            </li>
-            <li>
-                <a href="#message">
-                    <span class="icon-count">29</span>
-                    <i class="fa fa-envelope fa-2x"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#notification">
-                    <span class="icon-count">59</span>
-                    <i class="fa fa-bell fa-2x"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#sign-out">
-                    <i class="fa fa-sign-out-alt fa-2x"></i>
-                </a>
-            </li>
+            <div class="navi">
+                 <li>
+                    <a href="{% url 'home:index' %}"><b>Bosh sahifa</b></a>
+                <li>
+                <li>
+                        <a href="#message"><b>Xizmatlar</b>                        </a>
+                    </li>
+                <li>
+                        <a href="#message"><b>Video Maslahatlar</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#message"><b>Vebinar</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#message"><b>Xotira</b>
+                        </a>
+                    </li>
+            </div>
+            <div class="navbar-icon">
+                <li>
+                    <a href="#message">
+                        <span class="icon-count">29</span>
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#notification">
+                        <span class="icon-count">59</span>
+                        <i class="fa fa-bell fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sign-out">
+                        <i class="fa fa-sign-out-alt fa-2x"></i>
+                    </a>
+                </li>
+            </div>
         </ul>
+        <!-- Hambureger menu -->
+            <main>
+                <div id="overlay">
+                    <a href="{% url 'home:index' %}"><b>Bosh sahifa</b></a>
+                    <a href="#message"><b>Xizmatlar</b></a>
+                    <a href="#message"><b>Video Maslahatlar</b></a>
+                    <a href="#message"><b>Vebinar</b></a>
+                    <a href="#message"><b>Xotira</b></a>
+                </div>
+                <div class="nav">
+                    <div id="hamburger">
+                        <div></div>
+                    </div>
+                </div>
+            </main>
+          <!-- Hambureger menu end -->
         <!-- End -->
     </div>
     <!-- End -->
 
     <!-- Sidenav -->
-    <div class="sidenav">
-        <div class="profile">
-            <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
+<div class="sidenav-main-container">
+    <div class="sidenav-container">
+        <div class="sidenav">
+            <div class="profile">
+                <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
 
-            <div class="name">
-              Ismi {{ user }}
+                <div class="name">
+                Ismi {{ user }}
+                </div>
+                <div class="job">
+                    username: @{{ user.username }}
+                </div>
             </div>
-            <div class="job">
-                username: @{{ user.username }}
-            </div>
-        </div>
 
-        <div class="sidenav-url">
-            <div class="url">
-                <a href="#profile" class="active">Profile</a>
+            <div class="sidenav-url">
+                <div class="url">
+                    <a href="#profile" class="active">Profile</a>
 
-                <hr align="center">
-            </div>
-            <div class="url">
-                <a href="#settings">Settings</a>
-                <hr align="center">
+Ozodbek React, [09.03.2023 15:17]
+<hr align="center">
+                </div>
+                <div class="url">
+                    <a href="#settings">Settings</a>
+                    <hr align="center">
+                </div>
             </div>
         </div>
     </div>
     <!-- End -->
-
     <!-- Main -->
     <div class="main">
         <h2>IDENTITY</h2>
@@ -348,7 +531,7 @@ body {
             </div>
         </div>
 
-        <h2>SOCIAL MEDIA</h2>
+<h2>SOCIAL MEDIA</h2>
         <div class="card">
             <div class="card-body">
                 <i class="fa fa-pen fa-xs edit"></i>
@@ -385,6 +568,28 @@ body {
             </div>
         </div>
     </div>
+</div>
     <!-- End -->
+<script>(() => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("overlay");
+    let closed = true;
+
+    const change = () => {
+      if (closed) {
+        hamburger.classList.add("open");
+        menu.classList.add("menu");
+      } else {
+        hamburger.classList.remove("open");
+        menu.classList.remove("menu");
+      }
+      closed = !closed;
+    };
+
+    hamburger.addEventListener("click", change);
+  })();
+</script>
 </body>
 </html>
+
+

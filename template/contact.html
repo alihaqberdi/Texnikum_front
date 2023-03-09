@@ -47,17 +47,17 @@
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
 							<nav class="main_nav ml-auto">
 								<ul>
-									<li><a href="{% url 'home:index' %}">Home</a></li>
-									<li><a href="{% url 'home:about' %}">About us</a></li>
-									<li><a href="{% url 'home:service' %}">Services</a></li>
-									<li><a href="{% url 'home:news' %}">News</a></li>
-									<li><a href="{% url 'home:contact' %}">Contact</a></li>
+									<li><a href="{% url 'home:index' %}">Bosh sahifa</a></li>
+									<li><a href="{% url 'home:about' %}">Biz Haqimizda</a></li>
+									<li><a href="{% url 'home:service' %}">Xizmatlar</a></li>
+									<li><a href="{% url 'home:news' %}">Yangiliklar</a></li>
+									<li><a href="{% url 'home:contact' %}">Aloqa uchun</a></li>
 									{% if user.is_authenticated %}
-                                    <li><a href="{% url 'user:profile' %}">Profile</a></li>
-                                    <li><a href="{% url 'user:logout' %}">Log out</a></li>
+                                    <li><a href="{% url 'user:profile' %}">Shaxsiy Kabinet</a></li>
+                                    <li><a href="{% url 'user:logout' %}">Tizimdan chiqish</a></li>
                                   	{% else %}
-                                    <li><a href="{% url 'user:register' %}">sign up</a></li>
-                                    <li><a href="{% url 'user:login' %}">login</a></li>
+                                    <li><a href="{% url 'user:register' %}">Ro'yxatdan o'tish</a></li>
+                                    <li ><a href="{% url 'user:login' %}">Kirish</a></li>
                                   	{% endif %}
 								</ul>
 							</nav>
@@ -152,14 +152,14 @@
 
 				<!-- Contact Info -->
 				<div class="col-lg-6">
-					<div class="section_title"><h2>Get in touch</h2></div>
+					<div class="section_title"><h2>Aloqa qiling</h2></div>
 					<div class="contact_text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa.</p>
+						<p>Tibbiy amaliyotimizda biz bemorlarimizga yuqori sifatli tibbiy xizmat ko'rsatishga intilamiz. Sizga muntazam parvarish kerakmi, o'tkir kasallikni davolash yoki surunkali holatni davolash kerakmi, bizning sog'liqni saqlash mutaxassislari jamoasi yordam berish uchun shu yerda.</p>
 					</div>
 					<ul class="contact_about_list">
-						<li><div class="contact_about_icon"><img src="{% static 'images/phone-call.svg' %}" alt=""></div><span>+45 677 8993000 223</span></li>
-						<li><div class="contact_about_icon"><img src="{% static 'images/envelope.svg' %}" alt=""></div><span>office@template.com</span></li>
-						<li><div class="contact_about_icon"><img src="{% static 'images/placeholder.svg' %}" alt=""></div><span>Main Str. no 45-46, b3, 56832, Los Angeles, CA</span></li>
+						<li><div class="contact_about_icon"><img src="{% static 'images/phone-call.svg' %}" alt=""></div><span>+998 88 613 40 44</span></li>
+						<li><div class="contact_about_icon"><img src="{% static 'images/envelope.svg' %}" alt=""></div><span>alisheyx361@gmail.com</span></li>
+						<li><div class="contact_about_icon"><img src="{% static 'images/placeholder.svg' %}" alt=""></div><span>Uzbekistan Samarkand Amir-Temur ko'chasi 12 uy</span></li>
 					</ul>
 				</div>
 
@@ -202,19 +202,19 @@
 						<!-- Working Hours -->
 						<div class="box working_hours">
 							<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width:29px; height:29px;"><img src="{% static 'images/alarm-clock.svg' %}" alt=""></div></div>
-							<div class="box_title">Working Hours</div>
+							<div class="box_title">Ishlash vaqti</div>
 							<div class="working_hours_list">
 								<ul>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div>Monday – Friday</div>
+										<div>Dushanba – Jumma</div>
 										<div class="ml-auto">8.00 – 19.00</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div>Saturday</div>
+										<div>Shanba</div>
 										<div class="ml-auto">9.30 – 17.00</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div>Sunday</div>
+										<div>yakshanba</div>
 										<div class="ml-auto">9.30 – 15.00</div>
 									</li>
 								</ul>

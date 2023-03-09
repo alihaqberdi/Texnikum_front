@@ -47,17 +47,17 @@
 						<div class="header_content d-flex flex-row align-items-center justify-content-start">
 							<nav class="main_nav ml-auto">
 								<ul>
-									<li><a href="{% url 'home:index' %}">Home</a></li>
-									<li><a href="{% url 'home:about' %}">About us</a></li>
-									<li><a href="{% url 'home:service' %}">Services</a></li>
-									<li><a href="{% url 'home:news' %}">News</a></li>
-									<li><a href="{% url 'home:contact' %}">Contact</a></li>
+									<li><a href="{% url 'home:index' %}">Bosh sahifa</a></li>
+									<li><a href="{% url 'home:about' %}">Biz Haqimizda</a></li>
+									<li><a href="{% url 'home:service' %}">Xizmatlar</a></li>
+									<li><a href="{% url 'home:news' %}">Yangiliklar</a></li>
+									<li><a href="{% url 'home:contact' %}">Aloqa uchun</a></li>
 									{% if user.is_authenticated %}
-                                    <li><a href="{% url 'user:profile' %}">Profile</a></li>
-                                    <li><a href="{% url 'user:logout' %}">Log out</a></li>
+                                    <li><a href="{% url 'user:profile' %}">Shaxsiy Kabinet</a></li>
+                                    <li><a href="{% url 'user:logout' %}">Tizimdan chiqish</a></li>
                                   	{% else %}
-                                    <li><a href="{% url 'user:register' %}">sign up</a></li>
-                                    <li><a href="{% url 'user:login' %}">login</a></li>
+                                    <li><a href="{% url 'user:register' %}">Ro'yxatdan o'tish</a></li>
+                                    <li ><a href="{% url 'user:login' %}">Kirish</a></li>
                                   	{% endif %}
 								</ul>
 							</nav>
@@ -114,7 +114,7 @@
 			</div>
 			<div class="menu_extra">
 				<div class="menu_appointment"><a href="#">Request an Appointment</a></div>
-				<div class="menu_emergencies">For Emergencies: +563 47558 623</div>
+				<div class="menu_emergencies">For Emergencies: +998088 613 40 44</div>
 			</div>
 
 		</div>
@@ -130,7 +130,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title"><span>CareMed</span> News</div>
+							<div class="home_title"><span>CareMed</span> Yangiliklar</div>
 							<div class="breadcrumbs">
 								<ul>
 									<li><a href="#">Home</a></li>
@@ -164,18 +164,20 @@
 								</div>
 							</div>
 							<div class="news_body">
-								<div class="news_title"><a href="#">10 Reasons to make a check up</a></div>
+								<div class="news_title"><a href="#">Tekshirish uchun 10 ta sabab</a></div>
 								<div class="news_info">
 									<ul>
-										<li class="news_author"><span>By </span><a href="#">Dr. William Smith</a></li>
-										<li class="news_tags"><span>in </span><a href="#">Therapy</a></li>
-										<li class="news_comments"><a href="#">3 Comments</a></li>
+										<li class="news_author"><span>By </span><a href="#">Dr. Alijon Haqberdiyev</a></li>
+										<li class="news_tags"><span>in </span><a href="#">Teraped</a></li>
+										<li class="news_comments"><a href="#">456 Comments</a></li>
 									</ul>
 								</div>
 								<div class="news_text">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semp er solli citudin. Aliquam nec dapibus massa.</p>
+									<p>Shifokoringiz bilan tekshirishni rejalashtirishingiz kerak bo'lgan 10 ta sabab
+
+Shifokoringiz bilan muntazam tekshiruvlar sog'lig'ingizni saqlashning muhim qismidir. O'zingizni yaxshi his qilyapsizmi yoki sog'lig'ingiz bilan bog'liq muammoga duch kelyapsizmi, shifokoringiz bilan ko'rikdan o'tishingiz kerak bo'lgan 10 ta sabab:</p>
 								</div>
-								<div class="news_link"><a href="#">Read More</a></div>
+								<div class="news_link"><a href="#">Ko'proq o'qish</a></div>
 							</div>
 						</div>
 
@@ -189,18 +191,18 @@
 								</div>
 							</div>
 							<div class="news_body">
-								<div class="news_title"><a href="#">10 Reasons to make a check up</a></div>
+								<div class="news_title"><a href="#">Muntazam Tekshiruv Haqida</a></div>
 								<div class="news_info">
 									<ul>
-										<li class="news_author"><span>By </span><a href="#">Dr. William Smith</a></li>
-										<li class="news_tags"><span>in </span><a href="#">Therapy</a></li>
-										<li class="news_comments"><a href="#">3 Comments</a></li>
+										<li class="news_author"><span>By </span><a href="#">Dr. Ozodbek Tursunov</a></li>
+										<li class="news_tags"><span>in </span><a href="#">Fizioteraped</a></li>
+										<li class="news_comments"><a href="#">363 Comments</a></li>
 									</ul>
 								</div>
 								<div class="news_text">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semp er solli citudin. Aliquam nec dapibus massa.</p>
+									<p>Sog'liqni saqlash muammolarini erta aniqlash: Muntazam tekshiruvlar sog'liq muammolarini erta aniqlashga yordam beradi, bunda ularni davolash osonroq bo'ladi.</p>
 								</div>
-								<div class="news_link"><a href="#">Read More</a></div>
+								<div class="news_link"><a href="#">Ko'proq o'qish</a></div>
 							</div>
 						</div>
 
@@ -214,18 +216,18 @@
 								</div>
 							</div>
 							<div class="news_body">
-								<div class="news_title"><a href="#">10 Reasons to make a check up</a></div>
+								<div class="news_title"><a href="#">Surunkali kasalliklar</a></div>
 								<div class="news_info">
 									<ul>
-										<li class="news_author"><span>By </span><a href="#">Dr. William Smith</a></li>
-										<li class="news_tags"><span>in </span><a href="#">Therapy</a></li>
-										<li class="news_comments"><a href="#">3 Comments</a></li>
+										<li class="news_author"><span>By </span><a href="#">Dr. Bexruz Alijanov</a></li>
+										<li class="news_tags"><span>in </span><a href="#">Teraped</a></li>
+										<li class="news_comments"><a href="#">321 Comments</a></li>
 									</ul>
 								</div>
 								<div class="news_text">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semp er solli citudin. Aliquam nec dapibus massa.</p>
+									<p>Surunkali kasalliklarni boshqarish: Agar sizda diabet yoki yuqori qon bosimi kabi surunkali holatingiz bo'lsa, ahvolingizni boshqarish va asoratlarni oldini olish uchun muntazam tekshiruvlar muhim ahamiyatga ega.</p>
 								</div>
-								<div class="news_link"><a href="#">Read More</a></div>
+								<div class="news_link"><a href="#">Ko'proq O'qish</a></div>
 							</div>
 						</div>
 
@@ -254,45 +256,45 @@
 						<!-- Categories -->
 						<div class="sidebar_categories sidebar_section">
 							<div class="sidebar_section_title">
-								<div class="sidebar_title">Categories</div>
+								<div class="sidebar_title">Ketegoriya</div>
 							</div>
 							<ul>
-								<li><a href="#">Medical Articles</a></li>
-								<li><a href="#">Therapy</a></li>
-								<li><a href="#">Useful Information</a></li>
-								<li><a href="#">Uncategorized</a></li>
+								<li><a href="#">Meditsina yangiliklar</a></li>
+								<li><a href="#">Terapiya</a></li>
+								<li><a href="#">Umumiy malumotlar</a></li>
+								<li><a href="#">hokazo</a></li>
 							</ul>
 						</div>
 
 						<!-- Archives -->
 						<div class="sidebar_archives sidebar_section">
 							<div class="sidebar_section_title">
-								<div class="sidebar_title">Archives</div>
+								<div class="sidebar_title">Xotira</div>
 							</div>
 							<ul>
-								<li><a href="#">December 2017</a></li>
-								<li><a href="#">January 2018</a></li>
-								<li><a href="#">February 2018</a></li>
-								<li><a href="#">March 2018</a></li>
+								<li><a href="#">Dekabr 2017</a></li>
+								<li><a href="#">Yanvar 2018</a></li>
+								<li><a href="#">Fevral 2018</a></li>
+								<li><a href="#">Mart 2018</a></li>
 							</ul>
 						</div>
 
 						<!-- Working Hours -->
 						<div class="box working_hours">
 							<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width:29px; height:29px;"><img src="{% static 'images/alarm-clock.svg' %}" alt=""></div></div>
-							<div class="box_title">Working Hours</div>
+							<div class="box_title">Ishlash vaqti</div>
 							<div class="working_hours_list">
 								<ul>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div>Monday – Friday</div>
+										<div>Dushanba – Jumma</div>
 										<div class="ml-auto">8.00 – 19.00</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div>Saturday</div>
+										<div>Shanba</div>
 										<div class="ml-auto">9.30 – 17.00</div>
 									</li>
 									<li class="d-flex flex-row align-items-center justify-content-start">
-										<div>Sunday</div>
+										<div>yakshanba</div>
 										<div class="ml-auto">9.30 – 15.00</div>
 									</li>
 								</ul>
@@ -303,8 +305,8 @@
 						<div class="ad d-flex flex-column align-items-center justify-content-end">
 							<div class="ad_background" style="background-image:url(images/ad.jpg)"></div>
 							<div class="ad_content">
-								<div class="ad_text">Come and take a <span>free screening</span></div>
-								<div class="button ad_button"><a href="#">read more</a></div>
+								<div class="ad_text">Come and take a <span>bepul Video maslahatlar</span></div>
+								<div class="button ad_button"><a href="#">Ko'proq o'qish</a></div>
 							</div>
 						</div>
 					</div>

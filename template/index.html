@@ -17,11 +17,11 @@
 </head>
 <body>
 
-<div class="super_container">
-	
+<div class="super_container" >
+
 	<!-- Header -->
 
-	<header class="header trans_200">
+	<header class="header trans_200" style="background-image:url({% static 'images/home_background_1.jpg'%})">
 
 		<!-- Top Bar -->
 		<div class="top_bar">
@@ -125,7 +125,7 @@
 	<div class="home">
 		<div class="home_slider_container" >
 			<!-- Home Slider -->
-			<div class="owl-carousel owl-theme home_slider">
+			<div class="owl-carousel owl-theme home_slider" style="background-image:url({% static 'images/home_background_1.jpg'%})">
 
 				<!-- Slider Item -->
 				<div class="owl-item">
@@ -235,7 +235,7 @@
 					<div class="box box_appointments">
 						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width: 29px; height:29px;"><img src="{% static 'images/phone-call.svg' %}" alt=""></div></div>
 						<div class="box_title">Appointments</div>
-						<div class="box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam cons equat semper sollicitudin.</div>
+						<div class="box_text">Tibbiyot sohasida uchrashuvlar bemorni parvarish qilishning hal qiluvchi qismidir. Tibbiy uchrashuvlar bemor va shifokor, hamshira yoki boshqa tibbiyot xodimlari kabi sog'liqni saqlash mutaxassisi o'rtasidagi</div>
 					</div>
 				</div>
 
@@ -243,9 +243,9 @@
 				<div class="col-lg-4 box_col">
 					<div class="box box_emergency">
 						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width: 37px; height:37px; margin-left:-4px;"><img src="{% static 'images/bell.svg' %}" alt=""></div></div>
-						<div class="box_title">Emergency Cases</div>
-						<div class="box_phone">+56 273 45678 235</div>
-						<div class="box_emergency_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo.</div>
+						<div class="box_title">Favqulotda Vaziyatlar</div>
+						<div class="box_phone">+998 88 613 40 44</div>
+						<div class="box_emergency_text">Tibbiyot sohasidagi favqulodda vaziyatlar shoshilinch tibbiy yordam va davolanishni talab qiladigan favqulodda yoki hayot uchun</div>
 					</div>
 				</div>
 
@@ -258,16 +258,16 @@
 	<div class="about">
 		<div class="container">
 			<div class="row row-lg-eq-height">
-				
+
 				<!-- About Content -->
 				<div class="col-lg-7">
 					<div class="about_content">
-						<div class="section_title"><h2>A great medical team to help your needs</h2></div>
+						<div class="section_title"><h2>Ehtiyojlaringizga yordam beradigan ajoyib tibbiy guruh</h2></div>
 						<div class="about_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellen tesque in luctus ex. Praesent luctus erat sit amet tortor aliquam bibendum. Nulla ut molestie augue, scelerisque consectetur quam. Dolor sit amet, consectetur adipiscing elit. Cura bitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellentesque in luctus ex.</p>
+							<p>Bemorlarga tibbiyot sohasida eng yaxshi yordam ko'rsatishni ta'minlash uchun ajoyib tibbiy guruh juda muhimdir. Tibbiy guruh odatda bemorlarga har tomonlama va muvofiqlashtirilgan yordam ko'rsatish uchun birgalikda ishlaydigan bir guruh sog'liqni saqlash mutaxassislaridan iborat. Jamoa tarkibiga shifokorlar, hamshiralar, shifokor yordamchilari, amaliyotchi hamshiralar, terapevtlar va boshqa tibbiyot xodimlari kirishi mumkin.</p>
 						</div>
 						<div class="button about_button">
-							<a href="#">read more</a>
+							<a href="#">Ko'proq o'qish</a>
 						</div>
 					</div>
 				</div>
@@ -287,18 +287,18 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="section_title section_title_light"><h2>Our Medical Departments</h2></div>
+					<div class="section_title section_title_light"><h2>Bizning tibbiyot bo'limlarimiz</h2></div>
 				</div>
 			</div>
 			<div class="row departments_row row-md-eq-height">
-				
+
 				<!-- Department -->
 				<div class="col-lg-3 col-md-6 dept_col">
 					<div class="dept">
 						<div class="dept_image"><img src="{% static 'images/dept_1.jpg' %}" alt=""></div>
 						<div class="dept_content text-center">
-							<div class="dept_title">plastic surgery</div>
-							<div class="dept_subtitle">Dr. James Smith</div>
+							<div class="dept_title">Plastik Jarrohlik</div>
+							<div class="dept_subtitle">Dr. Bexruz Alijanov</div>
 						</div>
 					</div>
 				</div>
@@ -308,8 +308,8 @@
 					<div class="dept">
 						<div class="dept_image"><img src="{% static 'images/dept_2.jpg' %}" alt=""></div>
 						<div class="dept_content text-center">
-							<div class="dept_title">gastroenterology</div>
-							<div class="dept_subtitle">Dr. Gunter Roscoe</div>
+							<div class="dept_title">GASTROENTEROLOGIYA</div>
+							<div class="dept_subtitle">Dr. Ozodbek Tursunov</div>
 						</div>
 					</div>
 				</div>
@@ -319,8 +319,8 @@
 					<div class="dept">
 						<div class="dept_image"><img src="{% static 'images/dept_3.jpg' %}" alt=""></div>
 						<div class="dept_content text-center">
-							<div class="dept_title">dentistry</div>
-							<div class="dept_subtitle">Dr. Maria Williams</div>
+							<div class="dept_title">Stomatologiya</div>
+							<div class="dept_subtitle">Dr. Alion Haqberdiyev</div>
 						</div>
 					</div>
 				</div>
@@ -329,9 +329,9 @@
 				<div class="col-lg-3 col-md-6 dept_col">
 					<div class="dept">
 						<div class="dept_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dap ibus massa. Pellen tesque in luctus ex.</p>
+							<p>Tomografiya va radiologiya bo'limi radiologik o'zgarishlarni aniqlovchi röntgen, MRI, ultrasonografiya va boshqa usullarni qo'llab-quvvatlaydi. Xirurgiya bo'limi esa kasallarning jismoniy muammolari, yaralanmalari, jigar, bosh, qo'l va yo'nalishli jihatlar kabi o'zgarishlarni tuzatish uchun xirurgik jarayonlarni bajaradi.</p>
 						</div>
-						<div class="button dept_button"><a href="#">read more</a></div>
+						<div class="button dept_button"><a href="#">Ko'proq o'qish</a></div>
 					</div>
 				</div>
 			</div>
@@ -344,19 +344,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col">
-					<div class="section_title"><h2>Our Featured Services</h2></div>
+					<div class="section_title"><h2>Tanlangan xizmatlarimiz</h2></div>
 				</div>
 			</div>
 			<div class="row services_row">
-				
+
 				<!-- Service -->
 				<div class="col-lg-4 col-md-6 service_col">
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_1.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Free Checkups</div>
+							<div class="service_title trans_200">Bepul Tekshiruvlar</div>
 							<div class="service_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+								<p>Bepul tekshiruvlar bemorlarga bepul beriladigan tibbiy maslahatlar yoki imtihonlarni anglatadi. Ushbu tekshiruvlar tibbiy yordam ko'rsatuvchi provayderlar, shifoxonalar, poliklinikalar yoki jamoat tashkilotlari tomonidan o'zlarining targ'ibot harakatlarining bir qismi sifatida yoki profilaktik yordamni targ'ib qilish usuli sifatida taklif qilinishi mumkin.</p>
 							</div>
 						</div>
 					</a>
@@ -367,9 +367,9 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_2.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Screening Exams</div>
+							<div class="service_title trans_200">Skrining imtihonlari</div>
 							<div class="service_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+								<p>Skrining imtihonlari - bu kasallik yoki holat uchun hech qanday alomatlar yoki ma'lum xavf omillari bo'lmagan shaxslarda kasallik yoki holat mavjudligini aniqlash uchun o'tkaziladigan tibbiy testlar yoki protseduralar. Ushbu imtihonlar odatda potentsial sog'liq muammolarini jiddiyroq bo'lishidan oldin aniqlash uchun profilaktika chorasi sifatida ishlatiladi.</p>
 							</div>
 						</div>
 					</a>
@@ -380,9 +380,9 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_3.svg' %}" alt=""></div>
-							<div class="service_title trans_200">RMI Services</div>
+							<div class="service_title trans_200">RMI xizmatlari</div>
 							<div class="service_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+								<p>RMI xizmatlari, shuningdek, masofaviy usulni chaqirish xizmatlari sifatida ham tanilgan, turli xil dasturiy ta'minot ilovalari tarmoq orqali bir-biri bilan muloqot qilish imkonini beruvchi texnologiya turidir. RMI xizmatlari dasturiy ta'minotni ishlab chiquvchilarga taqsimlangan ilovalarni yaratishga imkon beradi, bu erda dasturning turli komponentlari turli xil kompyuterlarda ishlashi mumkin, ammo baribir bir-biri bilan uzluksiz o'zaro ta'sir qiladi.</p>
 							</div>
 						</div>
 					</a>
@@ -393,9 +393,9 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_4.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Dentistry</div>
+							<div class="service_title trans_200">Stomatologiya</div>
 							<div class="service_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+								<p>Stomatologiya - bu tishlar, milklar va og'iz bo'shlig'ining boshqa tuzilmalariga ta'sir qiluvchi kasalliklarni tashxislash, davolash va oldini olishga qaratilgan tibbiyot sohasi. Stomatologlar - bu muntazam tozalash, plomba, ekstraktsiya va boshqa protseduralarni o'z ichiga olgan stomatologik xizmatlarni ko'rsatishga ixtisoslashgan tibbiyot mutaxassislari.</p>
 							</div>
 						</div>
 					</a>
@@ -406,9 +406,9 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_5.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Neonatology</div>
+							<div class="service_title trans_200">Neonatologiya</div>
 							<div class="service_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+								<p>Neonatologiya - bu yangi tug'ilgan chaqaloqlarni, ayniqsa muddatidan oldin yoki og'ir kasallik bilan tug'ilgan chaqaloqlarni tibbiy yordamga qaratilgan pediatriyaning kichik ixtisosligi. Neonatologlar yangi tug'ilgan chaqaloqlar va chaqaloqlarni parvarish qilish bilan shug'ullanadigan shifokorlardir.</p>
 							</div>
 						</div>
 					</a>
@@ -419,9 +419,9 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_6.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Biochemistry</div>
+							<div class="service_title trans_200">Biokimyo</div>
 							<div class="service_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+								<p>Biokimyo - bu tirik organizmlarda sodir bo'ladigan kimyoviy jarayonlarga qaratilgan fan sohasi. U metabolizm, gen ekspressiyasi va oqsil sintezi kabi hujayra jarayonlarini boshqaradigan kimyoviy reaktsiyalar va molekulyar o'zaro ta'sirlarni o'rganish uchun biologiya va kimyo tamoyillarini birlashtiradi.</p>
 							</div>
 						</div>
 					</a>
@@ -438,9 +438,9 @@
 			<div class="row">
 				<div class="col">
 					<div class="cta_content text-center">
-						<h2>Need a personal health plan?</h2>
-						<p>Duis massa massa, mollis vel ullamcorper quis, finibus et urna. Aliquam ac eleifend metus. Ut sollicitudin risus ex</p>
-						<div class="button cta_button"><a href="#">request a plan</a></div>
+						<h2>Shaxsiy salomatlik rejasi kerakmi?</h2>
+						<p>Shaxsiy salomatlik rejasi, kishilarga salomatlikni saqlash uchun o'zini boshqarishda yordam beradigan tadbirlarni o'z ichiga olgan bir qator amallar</p>
+						<div class="button cta_button"><a href="#">rejasini so'rash</a></div>
 					</div>
 				</div>
 			</div>
