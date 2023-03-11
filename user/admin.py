@@ -1,82 +1,28 @@
 from django.contrib import admin
-from .models import Nurse,Patsient, Doctor,SeniorDoctor,Admin, Profile
+from django.contrib.auth.admin import UserAdmin
+
+from user.models import User
+
+
 # Register your models here.
-
-
-
-
-admin.site.register(Profile)
-
-
-
-
-@admin.register(Patsient)
-class Patsient(admin.ModelAdmin):
-    list_display = ['user',
-                    'name',
-                    'email',
-                    'mobile',
-                    'images',
-                    'city',
-                    'street',
-                    'is_staff',
-                    'is_active',
-                    ]
-    # list_filter = ['in_stock', 'is_active']
-
-
-@admin.register(Nurse)
-class Nurse(admin.ModelAdmin):
-    list_display = ['name',
-                    'email',
-                    'mobile',
-                    'images',
-                    'city',
-                    'street',
-                    'is_staff',
-                    'is_active',
-                    'patsient']
-    # list_filter = ['in_stock', 'is_active']
-
-@admin.register(Doctor)
-class Doctor(admin.ModelAdmin):
-    list_display = ['name',
-                    'email',
-                    'mobile',
-                    'images',
-                    'city',
-                    'street',
-                    'is_staff',
-                    'is_active',
-                    'patsient',
-                    'nurse']
-    # list_filter = ['in_stock', 'is_active']
-
-
-@admin.register(SeniorDoctor)
-class SeniorDoctor(admin.ModelAdmin):
-    list_display = ['name',
-                    'email',
-                    'mobile',
-                    'images',
-                    'city',
-                    'street',
-                    'is_staff',
-                    'is_active',
-                    'patsient',
-                    'nurse',
-                    'doctor']
-
-
-@admin.register(Admin)
-class Admin(admin.ModelAdmin):
-    list_display = ['name',
-                    'email',
-                    'mobile',
-                    'images',
-                    'city',
-                    'street',
-                    'is_staff',
-                    'is_active',
-                    'nurse',
-                    'doctor']
+@admin.register(User)
+class UserAdmin(UserAdmin):
+    list_display = 'username', 'first_name', 'user_type', 'is_superuser',
+    filter_horizontal = 'user_permissions',
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        ('Personal info', {'fields': (
+            'first_name', 'last_name', 'email', 'user_type', 'birthday', 'phone', 'clinic_leader')}),
+        ('Permissions', {
+            'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
+        }),
+        ('Important dates', {'fields': ('last_login',)}),
+    )
+    user_fieldsets = (
+        (None, {'fields': ('username', 'password', 'phone')}),
+        ('Personal info', {'fields': (
+            'first_name', 'last_name', 'email', 'user_type', 'birthday')}),
+        ('Permissions', {
+            'fields': ('is_active', 'is_staff'),
+        }),
+    )
