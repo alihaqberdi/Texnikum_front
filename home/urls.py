@@ -11,4 +11,5 @@ urlpatterns = [
     path('', views.IndexView, name='index'),
     path('news/', views.NewsView, name='news'),
     path('service/', views.ServiceView, name='service'),
+    path('video-maslahatlar/', views.VideoView, name='video'),
     ]
