@@ -24,6 +24,9 @@ urlpatterns = [
     path('', include('home.urls')),
 ]
 
+admin.site.index_title = "Clinika startup"
+admin.site.site_header = "Clinica Admin"
+admin.site.site_title = "Admin!!!"
 
 if DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
