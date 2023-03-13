@@ -49,6 +49,25 @@ class User(AbstractBaseUser, PermissionsMixin):
         ('citizen', 'Fuqoro'),
         ('admin', 'Admin'),
     )
+    IRAN_NOTEBOOK = (
+        ("yes", "ha"),
+        ("no", "yo'q"),
+    )
+    DISABILITY = (
+        ('yes', 'ha'),
+        ("no", "yo'q"),
+    )
+    WOMANS_NOTEBOOK = (
+        ("yes", "ha"),
+        ("no", "yo'q"),
+    )
+    GROUP = (
+        ('first', '1-gruh'),
+        ('second', '2-gruh'),
+        ('third', '3-gruh'),
+        ('fourth', '4-gruh'),
+    )
+
     first_name = models.CharField(verbose_name='Ism', max_length=255, blank=True, null=True)
     last_name = models.CharField(verbose_name='Familiya', max_length=255, blank=True, null=True)
     email = models.EmailField(verbose_name='Pochta', unique=False, blank=True, null=True)
@@ -59,8 +78,33 @@ class User(AbstractBaseUser, PermissionsMixin):
                                 null=True, blank=True)
     phone = models.CharField(verbose_name='Telefon raqami', max_length=255, null=True, blank=True)
     user_type = models.CharField(verbose_name='Foydalanuvchi turi', max_length=255, choices=USER_TYPE, default='nurse')
-    clinic_leader = models.ForeignKey('home.Clinic', verbose_name='Qaysi poliklinika bosh shifokori',
-                                     on_delete=models.SET_NULL, null=True, blank=True)
+    # clinic_leader = models.ForeignKey('home.Clinic', verbose_name='Qaysi poliklinika bosh shifokori',
+    #                                  on_delete=models.SET_NULL, null=True, blank=True)
+    passport = models.CharField(verbose_name='Pasport seriyasi', max_length=20, null=True)
+    iron_notebook = models.CharField(
+        verbose_name="Temir daftarda bormi",
+        max_length=255,
+        choices=IRAN_NOTEBOOK,
+        null=True,
+    )
+    disabiltiy = models.CharField(
+        verbose_name="Nogironligi bormi",
+        max_length=20,
+        choices=DISABILITY,
+        null=True,
+    )
+    womens_notebook = models.CharField(
+        verbose_name="Ayollar daftarida bormi",
+        max_length=20,
+        choices=WOMANS_NOTEBOOK,
+        null=True,
+    )
+    group = models.CharField(
+        verbose_name="Qaysi gruxga kiradi",
+        max_length=20,
+        choices=GROUP,
+        null=True,
+    )
     # doctor = models.ForeignKey('user.', verbose_name='Qaysi sektor rahbari',
     #                            on_delete=models.SET_NULL, null=True, blank=True)
 

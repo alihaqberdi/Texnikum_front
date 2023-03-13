@@ -9,10 +9,11 @@ from user.models import User
 class UserAdmin(UserAdmin):
     list_display = 'username', 'first_name', 'user_type', 'is_superuser',
     filter_horizontal = 'user_permissions',
+    list_filter = 'iron_notebook',
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         ('Personal info', {'fields': (
-            'first_name', 'last_name', 'email', 'user_type', 'birthday', 'phone', 'clinic_leader')}),
+            'first_name', 'last_name', 'email', 'user_type', 'birthday', 'phone', 'passport', 'iron_notebook', 'disabiltiy', 'womens_notebook', 'group')}),
         ('Permissions', {
             'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
         }),

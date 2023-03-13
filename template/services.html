@@ -21,10 +21,16 @@
 		margin-left: 20px;
 	}
 	.logo_sub {
-		font-size: 18px;
+		font-size: 16px;
 		text-align: center;
 		margin-bottom: 15px;
 		padding-bottom: 10px;
+	}
+	@media(max-width:600px) {
+		.logo_sub {
+			padding: 15px 0;
+			margin-left: 3px;
+		}
 	}
 </style>
 
@@ -45,7 +51,15 @@
 						<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
 							<div class="top_bar_item"><a href="#">FAQ</a></div>
 							<div class="top_bar_item"><a href="#">Request an Appointment</a></div>
-							<div class="emergencies  d-flex flex-row align-items-center justify-content-start ml-auto">For Emergencies: +563 47558 623</div>
+							<div class="dropdown ml-auto">
+								<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  Til o'zgartirish
+								</button>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								  <button class="dropdown-item" type="button">O'zbek tili</button>
+								  <button class="dropdown-item" type="button">Rus tili</button>
+								</div>
+							</div>
 						</div>
 
 					</div>
@@ -66,11 +80,11 @@
 									<li><a href="{% url 'home:service' %}">Xizmatlar</a></li>
 									<li><a href="{% url 'home:news' %}">Yangiliklar</a></li>
 									<li><a href="{% url 'home:contact' %}">Aloqa uchun</a></li>
+                                    <li><a href="{% url 'home:video' %}">Video Maslahatlar</a></li>
 									{% if user.is_authenticated %}
                                     <li><a href="{% url 'user:profile' %}">Shaxsiy Kabinet</a></li>
                                     <li><a href="{% url 'user:logout' %}">Tizimdan chiqish</a></li>
                                   	{% else %}
-                                    <li><a href="{% url 'user:register' %}">Ro'yxatdan o'tish</a></li>
                                     <li ><a href="{% url 'user:login' %}">Kirish</a></li>
                                   	{% endif %}
 								</ul>
@@ -91,7 +105,7 @@
 							<div class="logo_content d-flex flex-column align-items-start justify-content-center">
 								<a class="logo_link" href="{% url 'home:index' %}">
 									<div class="logo">
-										<img src="https://www.sammu.uz/images/logo-lg.png?v=1.1.2" alt="University logo">
+										<img src="{% static 'img/logo.jpg' %}" alt="University logo">
 									</div>
 								</a>
 								<div class="logo_sub">Tibbiyot Markazi</div>

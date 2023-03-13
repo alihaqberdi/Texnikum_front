@@ -24,7 +24,7 @@
 body {
     background-color: #e8f5ff;
     font-family: Arial;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 /* NavbarTop */
@@ -391,7 +391,7 @@ main{
     <div class="navbar-top">
         <a href="{% url 'home:index' %}">
             <div class="logo">
-                <img src="https://www.sammu.uz/images/logo-lg.png?v=1.1.2" alt="University logo">
+                <img src="{% static 'img/logo.jpg' %}" alt="University logo">
             </div>
         </a>
         
@@ -403,13 +403,10 @@ main{
                     <a href="{% url 'home:index' %}"><b>Bosh sahifa</b></a>
                 <li>    
                 <li>
-                    <a href="#message"><b>Xizmatlar</b></a>
+                    <a href="{% url 'home:xizmat' %}"><b>Xizmatlar</b></a>
                 </li>
                 <li>
-                    <a href="#message"><b>Video Maslahatlar </b></a>
-                </li>
-                <li>
-                    <a href="#message"><b>Vebinar</b></a>
+                    <a href="{% url 'home:vebinar' %}"><b>Vebinar</b></a>
                 </li>
                 <li>
                     <a href="#message"><b>Xotira</b> </a>
@@ -417,19 +414,19 @@ main{
             </div>
             <div class="navbar-icon">
                 <li>
-                    <a href="#message">
+                    <a href="{% url 'home:xabarnoma' %}">
                         <span class="icon-count">29</span>
                         <i class="fa fa-envelope fa-2x"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#notification">
+                    <a href="{% url 'home:notificate' %}">
                         <span class="icon-count">59</span>
                         <i class="fa fa-bell fa-2x"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="{% url 'home:index' %}">
+                    <a href="{% url 'user:logout' %}">
                         <i class="fa fa-sign-out-alt fa-2x"></i>
                     </a>
                 </li>
@@ -473,7 +470,7 @@ main{
             <hr align="center">
                 </div>
                 <div class="url">
-                    <a href="#settings">Settings</a>
+                    <a href="#settings">Sozlamalar</a>
                     <hr align="center">
                 </div>
             </div>

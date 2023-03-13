@@ -22,11 +22,19 @@
 		margin-left: 20px;
 	}
 	.logo_sub {
-		font-size: 18px;
+		font-size: 16px;
 		text-align: center;
+		/* margin-left: 10px; */
 		margin-bottom: 15px;
 		padding-bottom: 10px;
 	}
+	@media(max-width:600px) {
+		.logo_sub {
+			padding: 15px 0;
+			margin-left: 3px;
+		}
+	}
+	
 </style>
 
 </head>
@@ -54,8 +62,7 @@
 								  <button class="dropdown-item" type="button">O'zbek tili</button>
 								  <button class="dropdown-item" type="button">Rus tili</button>
 								</div>
-							  </div>
-							<div class="emergencies  d-flex flex-row align-items-center justify-content-start ml-auto">Aloqa uchun: +998 88 613 40 44</div>
+							</div>
 						</div>
 
 					</div>
@@ -76,11 +83,11 @@
 									<li><a href="{% url 'home:service' %}">Xizmatlar</a></li>
 									<li><a href="{% url 'home:news' %}">Yangiliklar</a></li>
 									<li><a href="{% url 'home:contact' %}">Aloqa uchun</a></li>
+                                    <li><a href="{% url 'home:video' %}">Video Maslahatlar</a></li>
 									{% if user.is_authenticated %}
                                     <li><a href="{% url 'user:profile' %}">Shaxsiy Kabinet</a></li>
                                     <li><a href="{% url 'user:logout' %}">Tizimdan chiqish</a></li>
                                   	{% else %}
-                                    <li><a href="{% url 'home:video' %}">Video Maslahatlar</a></li>
                                     <li ><a href="{% url 'user:login' %}">Kirish</a></li>
                                   	{% endif %}
 								</ul>
@@ -101,7 +108,7 @@
 							<div class="logo_content d-flex flex-column align-items-start justify-content-center">
 								<a class="logo_link" href="{% url 'home:index' %}">
 									<div class="logo">
-										<img src="https://www.sammu.uz/images/logo-lg.png?v=1.1.2" alt="University logo">
+										<img src="{% static 'img/logo.jpg' %}" alt="University logo">
 									</div>
 								</a>
 								<div class="logo_sub">Tibbiyot Markazi</div>
@@ -157,7 +164,7 @@
 							<div class="row">
 								<div class="col">
 									<div class="home_content_inner">
-										<div class="home_title"><h1>Ehtiyotkorlik bilan tayyorlangan dori</h1></div>
+										<div class="home_title"><h1>Siz uchun bepul dori darmonlar</h1></div>
 										<div class="home_text">
 											<p>Ma'qullik, tajribali va ko'p yillardan beri amaliyotda muvaffaqiyatli ish olib kelgan mutaxassislar o'z dasturlarini etiborga olgan holda, ehtiyotkorlik bilan tayyorlangan dori o'zgartirishlarga oson qaytish va tuzatish imkoniyatlarini beradi. Dori ehtiyotkorlikning bir qator afzalliklari mavjudligi sababli tayyorlanadi. Bular quyidagilar bo'lishi mumkin</p>
 										</div>
@@ -284,7 +291,7 @@
 				<!-- About Content -->
 				<div class="col-lg-7">
 					<div class="about_content">
-						<div class="section_title"><h2>Ehtiyojlaringizga yordam beradigan ajoyib tibbiy guruh</h2></div>
+						<div class="section_title"><h2>Ehtiyojlaringizga yordam beradigan tibbiy guruh</h2></div>
 						<div class="about_text">
 							<p>Bemorlarga tibbiyot sohasida eng yaxshi yordam ko'rsatishni ta'minlash uchun ajoyib tibbiy guruh juda muhimdir. Tibbiy guruh odatda bemorlarga har tomonlama va muvofiqlashtirilgan yordam ko'rsatish uchun birgalikda ishlaydigan bir guruh sog'liqni saqlash mutaxassislaridan iborat. Jamoa tarkibiga shifokorlar, hamshiralar, shifokor yordamchilari, amaliyotchi hamshiralar, terapevtlar va boshqa tibbiyot xodimlari kirishi mumkin.</p>
 						</div>
@@ -389,7 +396,7 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_2.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Skrining imtihonlari</div>
+							<div class="service_title trans_200">Profilaktika skrining tekshiruvlari</div>
 							<div class="service_text">
 								<p>Skrining imtihonlari - bu kasallik yoki holat uchun hech qanday alomatlar yoki ma'lum xavf omillari bo'lmagan shaxslarda kasallik yoki holat mavjudligini aniqlash uchun o'tkaziladigan tibbiy testlar yoki protseduralar. Ushbu imtihonlar odatda potentsial sog'liq muammolarini jiddiyroq bo'lishidan oldin aniqlash uchun profilaktika chorasi sifatida ishlatiladi.</p>
 							</div>
@@ -402,7 +409,7 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_3.svg' %}" alt=""></div>
-							<div class="service_title trans_200">RMI xizmatlari</div>
+							<div class="service_title trans_200">Pediatr</div>
 							<div class="service_text">
 								<p>RMI xizmatlari, shuningdek, masofaviy usulni chaqirish xizmatlari sifatida ham tanilgan, turli xil dasturiy ta'minot ilovalari tarmoq orqali bir-biri bilan muloqot qilish imkonini beruvchi texnologiya turidir. RMI xizmatlari dasturiy ta'minotni ishlab chiquvchilarga taqsimlangan ilovalarni yaratishga imkon beradi, bu erda dasturning turli komponentlari turli xil kompyuterlarda ishlashi mumkin, ammo baribir bir-biri bilan uzluksiz o'zaro ta'sir qiladi.</p>
 							</div>
@@ -428,7 +435,7 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_5.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Neonatologiya</div>
+							<div class="service_title trans_200">Ginekologiya</div>
 							<div class="service_text">
 								<p>Neonatologiya - bu yangi tug'ilgan chaqaloqlarni, ayniqsa muddatidan oldin yoki og'ir kasallik bilan tug'ilgan chaqaloqlarni tibbiy yordamga qaratilgan pediatriyaning kichik ixtisosligi. Neonatologlar yangi tug'ilgan chaqaloqlar va chaqaloqlarni parvarish qilish bilan shug'ullanadigan shifokorlardir.</p>
 							</div>
@@ -441,7 +448,7 @@
 					<a href="services.html">
 						<div class="service text-center trans_200">
 							<div class="service_icon"><img class="svg" src="{% static 'images/service_6.svg' %}" alt=""></div>
-							<div class="service_title trans_200">Biokimyo</div>
+							<div class="service_title trans_200">Bepul labaratoriya tekshiruvlari</div>
 							<div class="service_text">
 								<p>Biokimyo - bu tirik organizmlarda sodir bo'ladigan kimyoviy jarayonlarga qaratilgan fan sohasi. U metabolizm, gen ekspressiyasi va oqsil sintezi kabi hujayra jarayonlarini boshqaradigan kimyoviy reaktsiyalar va molekulyar o'zaro ta'sirlarni o'rganish uchun biologiya va kimyo tamoyillarini birlashtiradi.</p>
 							</div>

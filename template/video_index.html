@@ -10,6 +10,36 @@
     <!-- https://fonts.google.com/ -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/templatemo-video-catalog.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/contact.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/contact_responsive.css' %}">
+    <style>
+	.logo_link .logo img {
+		height: 90px;
+		width: 90px;
+		margin-right: 35px;
+	}
+	.logo_sub {
+		font-size: 16px;
+		text-align: center;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+	}
+    @media(max-width:600px) {
+		.logo_sub {
+			padding: 15px 0;
+			margin-left: 3px;
+		}
+	}
+	img{
+        object-fit: contain;
+    }
+</style>
+
 <!--
 
 TemplateMo 552 Video Catalog
@@ -20,16 +50,13 @@ https://templatemo.com/tm-552-video-catalog
 </head>
 
 <body>
+
     <div class="tm-page-wrap mx-auto">
         <div class="position-relative">
             <div class="position-absolute tm-site-header">
                 <div class="container-fluid position-relative">
                     <div class="row">
                         <div class="col-7 col-md-4">
-                            <a href="index.html" class="tm-bg-black text-center tm-logo-container">
-                                <i class="fas fa-video tm-site-logo mb-3"></i>
-                                <h1 class="tm-site-name">Video Catalog</h1>
-                            </a>
                         </div>
                         <div class="col-5 col-md-8 ml-auto mr-0">
                             <div class="tm-site-nav">
@@ -44,15 +71,6 @@ https://templatemo.com/tm-552-video-catalog
                                     </button>
                                     <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
                                         <ul class="navbar-nav text-uppercase">
-                                            <li class="nav-item active">
-                                                <a class="nav-link tm-nav-link" href="#">Videos <span class="sr-only">(current)</span></a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="about.html">About</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link tm-nav-link" href="contact.html">Contact</a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -62,9 +80,85 @@ https://templatemo.com/tm-552-video-catalog
                 </div>
             </div>
             <div class="tm-welcome-container text-center text-white">
+                <header class="header trans_200">
+
+		<!-- Top Bar -->
+		<div class="top_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+							<div class="top_bar_item"><a href="#">FAQ</a></div>
+							<div class="top_bar_item"><a href="#">Request an Appointment</a></div>
+							<div class="dropdown ml-auto">
+								<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								  Til o'zgartirish
+								</button>
+								<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+								  <button class="dropdown-item" type="button">O'zbek tili</button>
+								  <button class="dropdown-item" type="button">Rus tili</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header Content -->
+		<div class="header_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<nav class="main_nav ml-auto">
+								<ul>
+									<li><a href="{% url 'home:index' %}">Bosh sahifa</a></li>
+									<li><a href="{% url 'home:about' %}">Biz Haqimizda</a></li>
+									<li><a href="{% url 'home:service' %}">Xizmatlar</a></li>
+									<li><a href="{% url 'home:news' %}">Yangiliklar</a></li>
+									<li><a href="{% url 'home:contact' %}">Aloqa uchun</a></li>
+                                    <li><a href="{% url 'home:video' %}">Video Masalahatlar</a></li>
+									{% if user.is_authenticated %}
+                                    <li><a href="{% url 'user:profile' %}">Shaxsiy Kabinet</a></li>
+                                    <li><a href="{% url 'user:logout' %}">Tizimdan chiqish</a></li>
+                                  	{% else %}
+                                    <li ><a href="{% url 'user:login' %}">Kirish</a></li>
+                                  	{% endif %}
+								</ul>
+							</nav>
+							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Logo -->
+		<div class="logo_container_outer">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="logo_container">
+							<div class="logo_content d-flex flex-column align-items-start justify-content-center">
+								<a class="logo_link" href="{% url 'home:index' %}">
+									<div class="logo">
+										<img src="{% static 'img/logo.jpg' %}" alt="University logo">
+									</div>
+								</a>
+								<div class="logo_sub">Tibbiyot Markazi</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
                 <div class="tm-welcome-container-inner">
-                    <p class="tm-welcome-text mb-1 text-white">Video Catalog is brought to you by TemplateMo.</p>
-                    <p class="tm-welcome-text mb-5 text-white">This is a full-width video banner.</p>
+                    <p class="tm-welcome-text mb-1 text-secondary">Texnikum haqida</p>
+                    <p class="tm-welcome-text mb-5 text-secondary">Qisqa metrajli video</p>
                     <a href="#content" class="btn tm-btn-animate tm-btn-cta tm-icon-down">
                         <span>Discover</span>
                     </a>
@@ -74,7 +168,7 @@ https://templatemo.com/tm-552-video-catalog
             <div id="tm-video-container">
                 <video autoplay muted loop id="tm-video">
                     <!-- <source src="video/sunset-timelapse-video.mp4" type="video/mp4"> -->
-                        <source src="video/wheat-field.mp4" type="video/mp4">
+                        <source src="{% static 'video/field.mp4' %}" type="video/mp4">
                 </video>    
             </div>
             
@@ -90,197 +184,185 @@ https://templatemo.com/tm-552-video-catalog
                             <div class="tm-categories-container mb-5">
                                 <h3 class="tm-text-primary tm-categories-text">Categories:</h3>
                                 <ul class="nav tm-category-list">
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link active">All</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Drone Shots</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Nature</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Actions</a></li>
-                                    <li class="nav-item tm-category-item"><a href="#" class="nav-link tm-category-link">Featured</a></li>
+									{% if not cate %}
+                                    	<li class="nav-item tm-category-item"><a href="{% url 'home:video' %}" class="nav-link tm-category-link active">All</a></li>
+										{% for ca in categor %}
+										<li class="nav-item tm-category-item"><a href="{% url 'home:category_video' ca.id %}" class="nav-link tm-category-link">{{ ca.name }}</a></li>
+										{% endfor %}
+									{% else %}
+										<li class="nav-item tm-category-item"><a href="{% url 'home:video' %}" class="nav-link tm-category-link">All</a></li>
+										{% for ca in categor %}
+											{% if cate.id == ca.id %}
+												<li class="nav-item tm-category-item"><a href="{% url 'home:category_video' ca.id %}" class="nav-link tm-category-link active">{{ ca.name }}</a></li>
+											{% else %}
+												<li class="nav-item tm-category-item"><a href="{% url 'home:category_video' ca.id %}" class="nav-link tm-category-link">{{ ca.name }}</a></li>
+											{% endif %}
+										{% endfor %}
+									{% endif %}
                                 </ul>
                             </div>        
                         </div>
                     </div>
                     
                     <div class="row tm-catalog-item-list">
+                        {% for i in video %}
                         <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
                             <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-01.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
+                                <img src="{{ i.front_img.url }}" alt="Image" class="img-fluid tm-catalog-item-img">
+                                <a href="{% url 'home:detail_video' i.id %}" class="position-absolute tm-img-overlay">
                                     <i class="fas fa-play tm-overlay-icon"></i>
                                 </a>
                             </div>    
                             <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Aenean aliquet sapien</h3>
-                                <p class="tm-catalog-item-text">Video thumbnail has a link to another HTML page. 
-                                    Categories <span class="tm-text-secondary">do not need</span> any JS. 
-                                    They are just separated HTML pages. Paging is at the bottom to extend the list as long as you want. 
-                                    This can be a large catalog.</p>
+                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">{{ i.title }}</h3>
+                                <p class="tm-catalog-item-text">{{ i.descriptions }}</p>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-02.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Mauris in odio vel odio</h3>
-                                <p class="tm-catalog-item-text">You may need TemplateMo for a quick chat or send an email if you have any question about this CSS template. 
-                                    <span class="tm-text-secondary">font-family: 'Source Sans Pro', sans-serif; for this template.</span></p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-03.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>                            
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sagittis sodales enim</h3>
-                                <p class="tm-catalog-item-text">You are allowed to use this video catalog for your business websites. 
-                                Please do not make a re-distribution of our template ZIP file on any template collection website.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-04.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>    
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Nam tincidunt consectetur</h3>
-                                <p class="tm-catalog-item-text">You can apply this template for your commercial CMS theme. Nam sem leo, imperdiet non lacinia eget, volutpat ac massa. Donec mattis in velit quis commodo. Cras nec rutrum arcu.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-05.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Praesent posuere rhoncus</h3>
-                                <p class="tm-catalog-item-text">Duis vulputate nisl metus, eget dapibus nunc ultricies id. Ut augue mauris, varius quis nulla non, sollicitudin consectetur nisl. Donec eget arcu placerat, ullamcorper.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-06.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>                            
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Turpis massa aliquam</h3>
-                                <p class="tm-catalog-item-text">Nunc neque risus, ultrices sed luctus at, iaculis at arcu. Pellentesque rutrum velit nec sapien ullamcorper ultrices. Vestibulum lectus risus, laoreet pretium ipsum</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-07.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>    
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Class aptent taciti sociosqu</h3>
-                                <p class="tm-catalog-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus bibendum orci sit amet dignissim rhoncus. Pellentesque pretium faucibus vestibulum.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-08.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Donec ac nisl ul elit</h3>
-                                <p class="tm-catalog-item-text">Suspendisse in odio congue, lobortis metus sed, venenatis nisl. In dapibus et massa feugiat facilisis. Maecenas venenatis aliquet nulla, a tincidunt erat suscipit eget.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 tm-catalog-item">
-                            <div class="position-relative tm-thumbnail-container">
-                                <img src="img/tn-09.jpg" alt="Image" class="img-fluid tm-catalog-item-img">    
-                                <a href="video-page.html" class="position-absolute tm-img-overlay">
-                                    <i class="fas fa-play tm-overlay-icon"></i>
-                                </a>
-                            </div>                            
-                            <div class="p-4 tm-bg-gray tm-catalog-item-description">
-                                <h3 class="tm-text-primary mb-3 tm-catalog-item-title">Sed mattis nisi erat</h3>
-                                <p class="tm-catalog-item-text">Integer ultricies mi eu aliquet cursus. Nam sem leo, imperdiet non lacinia eget, volutpat ac massa. Donec mattis in velit quis commodo. Cras nec rutrum arcu.</p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     <!-- Catalog Paging Buttons -->
-                    <div>
-                        <ul class="nav tm-paging-links">
-                            <li class="nav-item active"><a href="#" class="nav-link tm-paging-link">1</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">2</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">3</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">4</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link tm-paging-link">></a></li>
+                    <div style="display: flex;flex-wrap: nowrap;justify-content: space-evenly;">
+                        <ul class="nav tm-paging-links"	>
+							{% if video.has_previous %}
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.previous_page_number }}" class="nav-link tm-paging-link"><</a></li>
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page=1">1</a></li>
+							{% endif %}
+
+							{% if video.number|add:'-3' > 1 %}
+								<li class="nav-item"><a class="nav-link tm-paging-link">...</a></li>
+							{% endif %}
+
+							{% if video.number|add:'-2' > 1 %}
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.number|add:'-2' }}">{{ video.number|add:'-2' }}</a></li>
+							{% endif %}
+
+							{% if video.number|add:'-1' > 1 %}
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.number|add:'-1' }}">{{ video.number|add:'-1' }}</a></li>
+							{% endif %}
+
+							<li class="nav-item active"><a class="nav-link tm-paging-link">{{ video.number }}</a></li>
+
+							{% if video.number < video.paginator.num_pages|add:'-1' %}
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.number|add:'1' }}">{{ video.number|add:'1' }}</a></li>
+							{% endif %}
+
+							{% if video.number < video.paginator.num_pages|add:'-2' %}
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.number|add:'2' }}">{{ video.number|add:'2' }}</a></li>
+							{% endif %}
+
+							{% if video.number < video.paginator.num_pages|add:'-3' %}
+								<li class="nav-item"><a class="nav-link tm-paging-link">...</a></li>
+							{% endif %}
+
+							{% if video.has_next %}
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.paginator.num_pages }}">{{ video.paginator.num_pages }}</a></li>
+								<li class="nav-item"><a class="nav-link tm-paging-link" href="?page={{ video.next_page_number }}">></a></li>
+							{% endif %}
                         </ul>
                     </div>
                 </main>
 
                 <!-- Subscribe form and footer links -->
-                <div class="row mt-5 pt-3">
-                    <div class="col-xl-6 col-lg-12 mb-4">
-                        <div class="tm-bg-gray p-5 h-100">
-                            <h3 class="tm-text-primary mb-3">Do you want to get our latest updates?</h3>
-                            <p class="mb-5">Please subscribe our newsletter for upcoming new videos and latest information about our
-                                work. Thank you.</p>
-                            <form action="" method="GET" class="tm-subscribe-form">
-                                <input type="text" name="email" placeholder="Your Email..." required>
-                                <button type="submit" class="btn rounded-0 btn-primary tm-btn-small">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
-                        <div class="p-5 tm-bg-gray">
-                            <h3 class="tm-text-primary mb-4">Quick Links</h3>
-                            <ul class="list-unstyled tm-footer-links">
-                                <li><a href="#">Duis bibendum</a></li>
-                                <li><a href="#">Purus non dignissim</a></li>
-                                <li><a href="#">Sapien metus gravida</a></li>
-                                <li><a href="#">Eget consequat</a></li>
-                                <li><a href="#">Praesent eu pulvinar</a></li>
-                            </ul>    
-                        </div>                        
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-4">
-                        <div class="p-5 tm-bg-gray h-100">
-                            <h3 class="tm-text-primary mb-4">Our Pages</h3>
-                            <ul class="list-unstyled tm-footer-links">
-                                <li><a href="#">Our Videos</a></li>
-                                <li><a href="#">License Terms</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Privacy Policies</a></li>
-                            </ul>
-                        </div>                        
-                    </div>
-                </div> <!-- row -->
 
-                <footer class="row pt-5">
-                    <div class="col-12">
-                        <p class="text-right">Copyright 2020 The Video Catalog Company 
-                        
-                        - Designed by <a href="https://templatemo.com" rel="nofollow" target="_parent">TemplateMo</a></p>
-                    </div>
-                </footer>
+
             </div> <!-- tm-content-container -->
         </div>
+    <footer class="footer">
+		<div class="footer_container">
+			<div class="container">
+				<div class="row">
 
+					<!-- Footer - About -->
+					<div class="col-lg-4 footer_col" style="margin-top: 10%;">
+						<div class="footer_about">
+							<ul class="footer_about_list">
+								<li><div class="footer_about_icon"><img src="{% static 'images/phone-call.svg' %}" alt=""></div><span>+45 677 8993000 223</span></li>
+								<li><div class="footer_about_icon"><img src="{% static 'images/envelope.svg' %}" alt=""></div><span>office@template.com</span></li>
+								<li><div class="footer_about_icon"><img src="{% static 'images/placeholder.svg' %}" alt=""></div><span>Main Str. no 45-46, b3, 56832, Los Angeles, CA</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Footer - Links -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_links footer_column">
+							<div class="footer_title">Useful Links</div>
+							<ul>
+								<li><a href="#">Testimonials</a></li>
+								<li><a href="#">FAQ</a></li>
+								<li><a href="#">Apply for a Job</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+								<li><a href="#">Our Partners</a></li>
+								<li><a href="#">Services</a></li>
+								<li><a href="#">Free services</a></li>
+								<li><a href="#">About us</a></li>
+								<li><a href="#">News</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Our Screening Program</a></li>
+								<li><a href="#">FAQ</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Footer - News -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_news footer_column">
+							<div class="footer_title">Useful Links</div>
+							<ul>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Aliquam ac eleifend metus</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Donec in libero sit amet mi vulputate</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Aliquam ac eleifend metus</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-lg-row flex-column align-items-lg-center justify-content-start">
+							<div class="cr"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This project is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="" target="_blank">Alisheyx</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+							<div class="footer_social ml-lg-auto">
+								<ul>
+									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
     </div> <!-- .tm-page-wrap -->
 
     <script src="{% static 'js_video/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'js_video/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+    <script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+    <script src="{% static 'plugins/easing/easing.js' %}"></script>
+    <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
     <script>
         function setVideoSize() {
             const vidWidth = 1920;

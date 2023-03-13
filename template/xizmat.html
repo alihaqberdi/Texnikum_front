@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <title>Xizmatlar</title>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <!-- FontAwesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <style>
+      /* Import Font Dancing Script */
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e8f5ff;
+    font-family: Arial;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/* NavbarTop */
+.navbar-top {
+    width: 100vw;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0px 4px 8px 0px grey;
+    height: 70px;
+}
+.navbar-top ul .navi li {
+    cursor: pointer;
+}
+.title {
+    font-family: 'Dancing Script', cursive;
+    padding-top: 15px;
+    position: absolute;
+    left: 45%;
+}
+
+.navbar-top ul {
+    display: flex;
+    float: right;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.navbar-top ul li {
+    float: left;
+}
+
+.navbar-top ul li a {
+    color: #333;
+    padding: 14px 16px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.icon-count {
+    background-color: #ff0000;
+    color: #fff;
+    float: right;
+    font-size: 11px;
+    left: -25px;
+    padding: 2px;
+    position: relative;
+}
+
+/* End */
+
+/* Sidenav */
+.sidenav-main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.sidenav {
+    background-color: #ffffff;
+    color: #333;
+    border-bottom-right-radius: 25px;
+    height: 86%;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    position: absolute;
+    top: 60px;
+    width: 18%;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.profile {
+    margin-bottom: 20px;
+    margin-top: -12px;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 1px grey;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.job {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.url, hr {
+    text-align: center;
+}
+
+.url hr {
+    margin-left: 20%;
+    width: 60%;
+}
+
+.url a {
+    color: #818181;
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 6px 8px;
+    text-decoration: none;
+}
+
+.url a:hover, .url .active {
+    background-color: #e8f5ff;
+    border-radius: 28px;
+    color: #000;
+    margin-left: 14%;
+    width: 65%;
+}
+main{
+    display: none;
+}
+/* End */
+
+/* Main */
+.main {
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 28px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+.main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit {
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+.social-media {
+    text-align: center;
+    width: 90%;
+}
+
+.social-media span {
+    margin: 0 10px;
+}
+
+.fa-facebook:hover {
+    color: #4267b3 !important;
+}
+
+.fa-twitter:hover {
+    color: #1da1f2 !important;
+}
+
+.fa-instagram:hover {
+    color: #ce2b94 !important;
+}
+
+.fa-invision:hover {
+    color: #f83263 !important;
+}
+
+.fa-github:hover {
+    color: #161414 !important;
+}
+
+.fa-whatsapp:hover {
+    color: #25d366 !important;
+}
+.fa-snapchat:hover {
+    color: #fffb01 !important;
+}
+/* End */
+.navbar-top .logo {
+    display: inline-block;
+}
+.navbar-top .logo img {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    margin: 7px 20px;
+}
+@media (max-width:963px){
+        .navbar-top{
+            width: 110%;
+            margin-bottom: 20px;
+        }
+        .navbar-top ul{
+            display: none;
+        }
+        .sidenav-main-container{
+            display: block;
+            padding: 10px 0px;
+        }
+        .sidenav-container{
+            position: relative;
+            top: -70px;
+            left: 10px;
+        }
+        .sidenav{
+            width: 97%;
+            height: 350px;
+            border-radius: 20px;
+            box-shadow: 1px 1px 8px 0 grey;
+            padding-left: 10px;
+            padding-right: 10px;
+            /* background-color: red; */
+        }
+        .main{
+            position: absolute;
+            top: 550px;
+            /* left: 20px; */
+            margin: 0;
+            width: 100%;
+        }
+        /* Hamburger menu */
+        main {
+            display: block;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+
+        .logo,
+        .content {
+            color: #fafafa;
+        }
+
+        .nav {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+
+        .logo,
+        #hamburger {
+            margin: 2%;
+        }
+
+        #hamburger {
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.25s linear;
+            width: clamp(1.5rem, 2vw + 1.1rem, 6rem);
+            height: clamp(2rem, 1.4vw + 1.7rem, 5rem);
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: -10px;
+            top: 10px;
+        }
+
+        #hamburger:hover {
+            opacity: 1;
+        }
+
+        #hamburger div,
+        #hamburger div:after,
+        #hamburger div:before {
+            background-color: #000;
+            border-radius: 10px;
+            width: clamp(1.5rem, 2vw + 1.1rem, 6rem);
+            height: clamp(0.2rem, 0.3vw + 0.1rem, 0.8rem);
+            transition: all 0.15s linear;
+            height: 4px;
+        }
+
+        #hamburger div:before,
+        #hamburger div:after {
+            content: "";
+            position: absolute;
+            height: 4px;
+        }
+
+        #hamburger div:before {
+            transform: translateY(-200%);
+        }
+
+        #hamburger div:after {
+            transform: translateY(200%);
+        }
+
+        #hamburger.open div {
+            background: transparent;
+        }
+
+        #hamburger.open div:before {
+            transform: rotate(45deg);
+        }
+
+        #hamburger.open div:after {
+            transform: rotate(-45deg);
+        }
+
+        #overlay {
+            position: fixed;
+            width: 100%;
+            min-height: 100%;
+            background-color: #fff;
+            z-index: 1;
+            transform: translateY(-100%);
+            transition: all 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #overlay.menu {
+            transform: translateY(0%);
+        }
+
+
+#overlay a {
+            text-decoration: none;
+            color: #000;
+            font-size: 26px;
+            margin: 2%;
+            transition: opacity 0.2s linear;
+        }
+        #overlay a:hover {
+            opacity: 1;
+        }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navbar top -->
+    <div class="navbar-top">
+        <a href="{% url 'home:index' %}">
+            <div class="logo">
+                <img src="{% static 'img/logo.jpg' %}" alt="University logo">
+            </div>
+        </a>
+        
+
+        <!-- Navbar -->
+        <ul>
+            <div class="navi">
+                <li>
+                    <a href="{% url 'home:index' %}"><b>Bosh sahifa</b></a>
+                <li>
+                <li>
+                    <a href="{% url 'user:profile' %}"><b>Shaxsiy Kabinet</b></a>
+                <li>
+                <li>
+                    <a href="#"><b>Xizmatlar</b></a>
+                </li>
+                <li>
+                    <a href="{% url 'home:vebinar' %}"><b>Vebinar</b></a>
+                </li>
+                <li>
+                    <a href="#message"><b>Xotira</b> </a>
+                </li>
+            </div>
+            <div class="navbar-icon">
+                <li>
+                    <a href="{% url 'home:xabarnoma' %}">
+                        <span class="icon-count">29</span>
+                        <i class="fa fa-envelope fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'home:notificate' %}">
+                        <span class="icon-count">59</span>
+                        <i class="fa fa-bell fa-2x"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'user:logout' %}">
+                        <i class="fa fa-sign-out-alt fa-2x"></i>
+                    </a>
+                </li>
+            </div>
+        </ul>
+        <!-- Hambureger menu -->
+            <main>
+                <div id="overlay">
+                    <a href="{% url 'home:index' %}"><b>Bosh sahifa</b></a>
+                    <a href="#message"><b>Xizmatlar</b></a>
+                    <a href="#message"><b>Video Maslahatlar</b></a>
+                    <a href="#message"><b>Vebinar</b></a>
+                    <a href="#message"><b>Xotira</b></a>
+                </div>
+                <div class="nav">
+                    <div id="hamburger">
+                        <div></div>
+                    </div>
+                </div>
+            </main>
+          <!-- Hambureger menu end -->
+        <!-- End -->
+    </div>
+    <!-- End -->
+
+    <!-- Sidenav -->
+<div class="main-container">
+
+
+    <div class="row">
+
+        <div class="card col-md-4 col-sm-12 mt-3" style="width: 24rem;">
+            <img class="card-img-top" src="https://cancercenter.uz/wp-content/uploads/photo_2022-04-06_07-48-04.jpg" alt="feature_image">
+            <div class="card-body">
+              <h3 class="card-title">Bosh shifokorga murojaat</h3>
+              <p class="card-text">Bosh shifokor, kasbi alohida qilinadigan bir nechta yo'nalishlari bo'lishi mumkin, masalan, umumiy terapevt, nörolog, kardiolog, onkolog, endokrinolog va h.k. shifokorlar bo'lishi mumkin. Bosh shifokor o'z vakolatida ko'p qo'llaniladi va o'ziga xos ma'lumot va qobiliyatlariga ega bo'lishi kerak.</p>
+            </div>
+        </div>
+
+        <div class="card col-md-4 col-sm-12 mt-3" style="width: 24rem;">
+            <img class="card-img-top" src="https://najodshifo.uz/images/terapevt.jpg" alt="feature_image">
+            <div class="card-body">
+              <h3 class="card-title">Shifokor maslahati</h3>
+              <p class="card-text">Shifokor maslahati, kasbi tibbiyot bo'lgan shaxslar tomonidan taqdim etiladi va kasbi ko'p qo'llaniladi. Shifokor maslahati, klinik tashxis, davolash rejasi, davolash usullari va boshqa tibbiyot sohasidagi savollarga javoblar kabi muhim ma'lumotlarni o'z ichiga oladi. Bu maslahatlar, kasbi tibbiyot sohasida faoliyat yurituvchi shaxslar uchun yordamchi va ko'rsatkich vazifasini bajaradi.</p>
+            </div>
+        </div>
+
+        <div class="card col-md-4 col-sm-12 mt-3" style="width: 24rem;">
+            <img class="card-img-top" src="https://cdnn1.img.sputniknews-uz.com/img/343/89/3438974_0:159:3077:1890_600x0_80_0_0_34e6ba4e7ae8722b5f260faba646d961.jpg" alt="feature_image">
+            <div class="card-body">
+              <h3 class="card-title">Hamshira yordami</h3>
+              <p class="card-text">Savollaringizni tushunish va eng yaxshi javoblarni topish uchun siz bilan ishlash uchun o'z bilim va tajribamdan foydalanaman. Mening maqsadim sizning savollaringizni tushunish va ularga echim topishda hamkorlikda yordam berishdir. Bu maslahatlar, kasbi tibbiyot sohasida faoliyat yurituvchi shaxslar uchun yordamchi va ko'rsatkich vazifasini bajaradi</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="card col-md-4 col-sm-12 mt-3" style="width: 24rem;">
+            <img class="card-img-top" src="https://yuz.uz/imageproxy/1200x/https://yuz.uz/file/news/d743ac1779de352d661987bb7343d345.jpg" alt="feature_image">
+            <div class="card-body">
+              <h3 class="card-title">Statsionar yordam</h3>
+              <p class="card-text">Statsionar yordam kompyuter tarmoqining ishlashi va o'zaro aloqalarini o'rganish, xizmat qo'llash, kompyuter tarmoqini tuzatish va qurish, dasturiy ta'minotni yangilash, ma'lumotlar bazasini saqlash va boshqalar kabi IT sohalari bo'yicha ko'rsatiladigan maslahatlar va yordamlar bilan bog'liqdir.</p>
+            </div>
+        </div>
+
+        <div class="card col-md-4 col-sm-12 mt-3" style="width: 24rem;">
+            <img class="card-img-top" src="https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22066_16436379427226103.jpg" alt="feature_image">
+            <div class="card-body">
+              <h3 class="card-title">Laboratoriya xizmati</h3>
+              <p class="card-text">Laboratoriya xizmati, laboratoriya tashkil etish, tashkilotdagi laboratoriyalarning o'rnatilishi va ularga loyihalar va xizmatlar ko'rsatishga yordam berishni o'z ichiga olgan xizmat hisoblanadi. Laboratoriya xizmati, laboratoriyalar uchun ishlab chiqarish, jarayonni nazorat qilish va analiz qilish uchun zarur bo'lgan qurilmalar va materiallar sotish.</p>
+            </div>
+        </div>
+
+        <div class="card col-md-4 col-sm-12 mt-3" style="width: 24rem;">
+            <img class="card-img-top" src="https://storage.kun.uz/source/3/11X-VLTssSAa0tQNIUn6Ow0_l7bvlx6X.jpg" alt="feature_image">
+            <div class="card-body">
+              <h3 class="card-title">Tezkor yordam</h3>
+              <p class="card-text">Tezkor yordam, o'z ichiga xizmatlar, dasturiy ta'minot va tizimlar, tarmoq va internet xizmatlari, tashqi ma'lumotlar bazalari va qo'shimcha IT xizmatlarini o'z ichiga olgan bir turi IT xizmatidir. Tezkor yordam, qisqa muddatli, samarali va ishonchli xizmatni ta'minlash maqsadida qurilgan va boshqa xizmatlar bilan birga ishlay oladi.</p>
+            </div>
+        </div>
+
+    </div>
+                
+
+                
+</div>
+    <!-- End -->
+<script>(() => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("overlay");
+    let closed = true;
+
+    const change = () => {
+      if (closed) {
+        hamburger.classList.add("open");
+        menu.classList.add("menu");
+      } else {
+        hamburger.classList.remove("open");
+        menu.classList.remove("menu");
+      }
+      closed = !closed;
+    };
+
+    hamburger.addEventListener("click", change);
+  })();
+</script>
+</body>
+</html>
+
+
