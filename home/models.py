@@ -80,4 +80,3 @@ class Nurse(models.Model):
         verbose_name_plural = "Hamshiralar"
         ordering = ("id",)
 
-
